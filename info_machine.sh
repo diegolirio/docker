@@ -6,4 +6,4 @@ uptime
 echo "O script está executando do diretório:" 
 pwd  
 
-apt-get update
+#apt-get update
