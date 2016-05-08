@@ -1,0 +1,9 @@
+FROM diegolirio/openjdk8:1.0
+MAINTAINER Diego Lirio <diegolirio.dl@gmail.com>
+RUN apt-get update && apt-get -y upgrade
+
+RUN apt-get install -y tomcat8
+
+RUN apt-get install -y curl
+
+RUN apt-get clean
