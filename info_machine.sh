@@ -5,3 +5,5 @@ echo "Info de hora atual e tempo que o computador está ligado:"
 uptime
 echo "O script está executando do diretório:" 
 pwd  
+
+#apt-get update
