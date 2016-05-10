@@ -17,6 +17,7 @@ RUN apt-get install -y git-core
 # Maven
 RUN curl -fSL "http://ftp.unicamp.br/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz"  -o apache-maven-3.1.1-bin.tar.gz
 RUN tar -xvf apache-maven-3.1.1-bin.tar.gz -C /root/maven --strip-components=1
+RUN rm apache-maven-3.1.1-bin.tar.gz
 
 # Mysql
 #RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
@@ -26,3 +27,6 @@ RUN tar -xvf apache-maven-3.1.1-bin.tar.gz -C /root/maven --strip-components=1
 ENV PATH $M2_HOME/bin:$PATH
 
 RUN apt-get clean
+
+WORKDIR $CATALINA_HOME
+
