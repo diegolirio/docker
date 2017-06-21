@@ -43,3 +43,5 @@ sudo docker exec -i $container bash -c "cd /root && git clone $url"
 sudo docker exec -i $container bash -c "cd /root/$app && mvn package -Dmaven.test.skip=true"
 sudo docker exec -i $container bash -c "mv /root/$app/target/$app_deploy.war webapps/"
 sudo docker exec -i $container bash -c "bin/catalina.sh start"
+
+

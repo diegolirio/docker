@@ -35,11 +35,11 @@ url=https://github.com/diegolirio/$app.git
 #string_to_replace_Suzi_with=Sara
 #app_deploy="${original_string/Suzi/$string_to_replace_Suzi_with}"
 #app_deploy="${$app/$app/ci-jenkins-}"
-app_deploy="cijenkinsdocker"
 
 sudo docker exec -i $container bash -c "java -version"
 sudo docker exec -i $container bash -c "mvn -version"
 sudo docker exec -i $container bash -c "cd /root && git clone $url"
+sudo docker exec -i $container bash -c "cd /root/$app/src/main/webapp && npm install"
 sudo docker exec -i $container bash -c "cd /root/$app && mvn package -Dmaven.test.skip=true"
-sudo docker exec -i $container bash -c "mv /root/$app/target/$app_deploy.war webapps/"
+sudo docker exec -i $container bash -c "mv /root/$app/target/$app.war webapps/"
 sudo docker exec -i $container bash -c "bin/catalina.sh start"
